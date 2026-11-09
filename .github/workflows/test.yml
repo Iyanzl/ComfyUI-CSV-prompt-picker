@@ -1,0 +1,30 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Install test dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Run CSV editor and route tests
+        run: python -m unittest discover -s tests -v
+      - name: Check JavaScript syntax
+        shell: bash
+        run: |
+          node --input-type=module --check < web/js/csv_editor.js
+          node --input-type=module --check < web/js/csv_prompt_picker1.js

@@ -1,0 +1,12 @@
+[project]
+name = "comfyui-csv-prompt-picker"
+version = "0.1.0"
+description = "CSV prompt selection and in-ComfyUI editing with backups and live refresh"
+requires-python = ">=3.10"
+license = "GPL-3.0-only"
+authors = [{ name = "Iyanzl" }]
+dependencies = ["aiohttp>=3.9,<4"]
+
+[project.urls]
+Repository = "https://github.com/Iyanzl/ComfyUI-CSV-prompt-picker"
+Issues = "https://github.com/Iyanzl/ComfyUI-CSV-prompt-picker/issues"

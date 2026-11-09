@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.test-tmp/
+.snapshots/
+.csv-editor-backups/
+input/
+output/
+temp/
+*.bak
+*.tmp
+.env
+.env.*
+# Machine-specific notes and the inherited upstream registry workflow stay local.
+/CSV编辑器说明.md
+/.github/workflows/publish_action.yml
