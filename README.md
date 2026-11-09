@@ -1,12 +1,20 @@
 # ComfyUI CSV Prompt Picker
 
-Pick and combine prompts from CSV files, then edit those files directly inside ComfyUI.
+Use multilingual labels and short aliases to select full prompts from CSV files, then edit the mappings directly inside ComfyUI.
 
 **特别感谢 [vslinx](https://github.com/vslinx) 和 [ComfyUI-vslinx-nodes](https://github.com/vslinx/ComfyUI-vslinx-nodes) 在节点开发和实现思路上提供的帮助。** 本项目独立维护，完整致谢见 [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md)。
 
 ![CSV editor with a synthetic example](docs/images/csv-editor.jpg)
 
 ## 中文
+
+### 多语言标签与简略提示词
+
+把容易理解的中文、英文或其他语言标签放在 CSV 第 1 列，把实际要发送给模型的完整提示词放在第 2 列。
+
+这样可以用简短、熟悉的名称选择较长提示词，也可以用中文标签管理英文提示词，或为同一段提示词配置不同语言的标签。内容由你在 CSV 中预先定义，适合管理常用风格、光照、镜头等预设。
+
+本仓库提供节点代码、说明和人工编写的通用示例。个人提示词库由使用者在本地管理。
 
 ### 功能
 
@@ -75,7 +83,9 @@ ComfyUI/input/csv/.csv-editor-backups/<原有子目录>/<文件名>.<时间戳>.
 
 ### Features
 
-Load and combine CSV prompt presets with single/multiple selections, random picks, draggable rows and extra prompts. Open the built-in editor with **✎** beside a filename or **✎ 编辑** in the file picker.
+Map readable labels in any language, or short aliases, to full prompts defined in your CSV. This lets you organize English prompts using Chinese labels, expand short preset names into longer text, or define several language-specific labels for a shared prompt. Keep your personal prompt collection locally; this repository contains code and hand-written generic examples.
+
+Load and combine presets with single/multiple selections, random picks, draggable rows and extra prompts. Open the built-in editor with **✎** beside a filename or **✎ 编辑** in the file picker.
 
 The editor supports search, add/duplicate/delete, extra columns, multiline prompts, save, **Ctrl+S**, and save as. It preserves duplicate rows and existing encodings/delimiters, creates backups before replacing originals, detects external edits, and refreshes nodes referencing the saved CSV in the current page. Runtime execution also detects CSV content changes.
 
